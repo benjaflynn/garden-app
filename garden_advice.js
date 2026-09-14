@@ -1,11 +1,11 @@
-// prompt user for season and desired type of plant
+// prompt user for season and desired type of plant. immediately change the user input to a lowercase string to compare against the database
 let season = prompt("What season would you like advice for?").toLowerCase(); 
 let plantType = prompt("Would you like to plant a flower or a vegetable?").toLowerCase();
 
-// Variable to hold gardening advice
+// this variable holds gardening advice. as the advice changes based on season and plant type, it starts off as an empty string
 let advice = "";
 
-// Determine advice based on the season
+// compare season input against the database of advice for summer or winter; if a match is found, change the advice variable to the correct advice; if no match is found, display that there is no advice available
 if (season === "summer") {
     advice += "Water your plants regularly and provide some shade.\n";
 } else if (season === "winter") {
@@ -14,7 +14,7 @@ if (season === "summer") {
     advice += "No advice for this season.\n";
 }
 
-// Determine advice based on the plant type
+// compare plant type input against the database of advice for flowers or vegetables; if a match is found, add the corresponding advice to the variable; else display that there is no advice available
 if (plantType === "flower") {
     advice += "Use fertiliser to encourage blooms.";
 } else if (plantType === "vegetable") {
@@ -23,7 +23,7 @@ if (plantType === "flower") {
     advice += "No advice for this type of plant.";
 }
 
-// Log the generated advice to the console
+// display the generated advice to the console for the user to see
 console.log(advice);
 
 // TODO: Examples of possible features to add:
